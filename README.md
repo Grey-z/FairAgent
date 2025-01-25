@@ -17,7 +17,7 @@ python drs-fairagent.py --save=2 --dataset='kuairec' --algo_name='mf' --alpha=2 
 - **data**: Folder: Pre-process dataset.
   -- **process_kuairec** Jupyter File: instrction of processing related dataset.
   -- **data_utilis** Python File: Funtions of processing dataset.
-- *drs-backbone.py**: Python File: Train backbone models.
+- **drs-backbone.py**: Python File: Train backbone models.
 - **drs-fairagent.py** : Python File: Train FairAgent.
 - **utilis.py** : General purpose functions.
 # Environment
