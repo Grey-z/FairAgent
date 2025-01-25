@@ -19,8 +19,8 @@ tune_pack: '{"lr": [0.001, 0.005, 0.01], "reg_1": [0.000001, 0.00001, 0.0001, 0.
 # algo
 algo_name: 'mf'
 # dataset
-data_path: '/data/linghui/'
-save_path: '/data/linghui/drs/'
+data_path: '/data/'
+save_path: '/data/drs/'
 res_path: ~
 dataset: 'kuairec'
 # dataset: 'kuairec_big' / dataset: 'steam'
