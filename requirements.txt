@@ -1,0 +1,15 @@
+colorama==0.4.6
+colorlog==6.9.0
+Cython==0.29.22
+joblib==1.0.1
+numpy==1.24.4
+optuna==4.1.0
+pandas==1.2.3
+PyYAML==5.4.1
+PyYAML==6.0.2
+Requests==2.32.3
+scikit_learn==0.24.1
+scipy==1.6.2
+setuptools==50.3.1.post20201107
+torch==1.8.0
+tqdm==4.51.0
