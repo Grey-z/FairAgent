@@ -22,7 +22,6 @@ from collections import defaultdict
 from logging import getLogger
 from ast import Global
 from pathlib import Path
-sys.path.append('/root/linghui/drs/TRD-main/daisyRec/')
 import daisy
 from utils import *
 
