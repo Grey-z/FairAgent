@@ -4,7 +4,7 @@ This is an anonymous repository about FairAgent, corresponding to the paper:**En
 1. Install the related environment configuration and dependency packages.
 2. Process data refer to the step in ./data/process_kuairec.ipynb
 # Environment
-This project is based on **Python 3.8.1** and **Pytorch 1.8.0**.
+This project is based on **Python 3.8.1** , **Pytorch 1.8.0** and **DaisyRec-v2.0**.
 
 Packages: Refer to requirement.txt
 
