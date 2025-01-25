@@ -17,6 +17,7 @@ python drs-fairagent.py --save=2 --dataset='kuairec' --algo_name='mf' --alpha=2 
 # ALDI:
 python drs-fairagent-ALDI.py --save=2 --dataset='kuairec' --algo_name='mf' --alpha=2 --beta=0.5 --gama=0.1 --gpu=1
 ```
+5. Calculate related metrics and plot figure.
 # Files
 
 - **daisy** : Folder: Open Library for Recommender Systems.
