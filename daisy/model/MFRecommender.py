@@ -129,19 +129,15 @@ class MF(GeneralRecommender):
             us = us.to(self.device)
             cands_ids = cands_ids.to(self.device)
 
-            # 嵌入用户和物品
             user_emb = self.embed_user(us).unsqueeze(dim=1)  # batch * factor -> batch * 1 * factor
             item_emb = self.embed_item(cands_ids).transpose(1, 2)  # batch * cand_num * factor -> batch * factor * cand_num
 
-            # 计算评分
             scores = torch.bmm(user_emb, item_emb).squeeze(1)  # batch * 1 * cand_num -> batch * cand_num
 
-            # 排序
             rank_ids = torch.argsort(scores, descending=True)  # batch * cand_num
             rank_list = torch.gather(cands_ids, 1, rank_ids)  # batch * cand_num
 
-            # 拼接结果
-            rec_ids = torch.cat((rec_ids, rank_list), dim=0)  # 拼接所有用户的推荐结果
+            rec_ids = torch.cat((rec_ids, rank_list), dim=0)  
 
         return rec_ids.cpu().numpy()
 
