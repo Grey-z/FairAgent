@@ -26,12 +26,7 @@ import torch.nn.functional as F
 import scipy.sparse as sp
 from ast import Global
 
-sys.path.append('/root/linghui/drs/TRD-main/daisyRec/')
 import daisy
-import imp
-imp.reload(daisy)
-from utils import *
-
 from daisy.utils.loader import RawDataReader, Preprocessor
 from daisy.utils.splitter import TestSplitter, ValidationSplitter
 from daisy.utils.config import init_seed, init_config, init_logger
@@ -39,7 +34,6 @@ from daisy.utils.metrics import MAP, NDCG, Recall, Precision, HR, MRR
 from daisy.utils.sampler import BasicNegtiveSampler, SkipGramNegativeSampler, UniqueNegativeSampler
 from daisy.utils.dataset import AEDataset, BasicDataset, CandidatesDataset, get_dataloader
 from daisy.utils.utils import get_history_matrix, get_ur, build_candidates_set, ensure_dir, get_inter_matrix
-
 from daisy.model.MFRecommender import MF
 from daisy.model.FMRecommender import FM
 from daisy.model.NFMRecommender import NFM
