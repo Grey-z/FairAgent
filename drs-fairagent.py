@@ -23,7 +23,6 @@ from ast import Global
 
 from trd import *
 from utils import *
-sys.path.append('/root/linghui/drs/TRD-main/daisyRec/')
 import daisy
 from daisy.utils.loader import RawDataReader, Preprocessor
 from daisy.utils.splitter import TestSplitter, ValidationSplitter
