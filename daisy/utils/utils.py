@@ -28,7 +28,6 @@ def get_ur(df):
     -------
     ur : dict, dictionary stored user-items interactions
     """
-    # 使用 groupby 按用户分组，并将每个用户的 item 转换为集合
     ur = df.groupby('user')['item'].apply(set).to_dict()
 
     return ur
