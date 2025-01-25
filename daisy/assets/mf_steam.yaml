@@ -1,0 +1,6 @@
+# steam:
+factors: 100
+epochs: 20
+lr: 0.01
+reg_1: 0.000001
+reg_2: 0.000001

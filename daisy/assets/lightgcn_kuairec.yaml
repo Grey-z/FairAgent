@@ -1,0 +1,7 @@
+# kuairec
+factors: 64
+lr: 0.005
+reg_1: 0.0001
+reg_2: 0.000001
+epochs: 30
+num_layers: 4

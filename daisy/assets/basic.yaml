@@ -1,0 +1,103 @@
+# version of code: creat a folder
+version: 'FairAgent/'   
+trd_version: 'drs_trd'
+# choose gpu
+gpu: '1'      
+
+# ensure reproducibility
+seed: 2024
+reproducibility: True
+state: ~
+
+# tune params
+optimization_metric: 'ndcg'
+hyperopt_trail: 20
+tune_testset: False
+tune_pack: '{"lr": [0.001, 0.005, 0.01], "reg_1": [0.000001, 0.00001, 0.0001, 0.001, 0], "reg_2": [0.000001, 0.00001, 0.0001, 0.001, 0], "num_layers": [2, 3, 4]}'
+# tune_pack: '{"lr": [0.001, 0.005, 0.01], "reg_1": [0.000001, 0.00001, 0.0001, 0.001], "reg_2": [0.000001, 0.00001, 0.0001, 0.001]}'
+
+# algo
+algo_name: 'mf'
+# dataset
+data_path: '/data/linghui/'
+save_path: '/data/linghui/drs/'
+res_path: ~
+dataset: 'kuairec'
+# dataset: 'kuairec_big' / dataset: 'steam'
+
+
+# tsbr: 
+val_method: 'tsbr'
+test_method: 'tsbr'
+fold_num: 1
+val_size: 0.1
+test_size: 0.2
+topk: 50
+n_actions: 20
+
+# candidate number for testing
+cand_num: 1000   
+
+# sample choice
+sample_method: 'uniform'
+sample_ratio: 0
+
+# negative ratio
+num_ng: 4    
+
+# trainiing details
+batch_size: 1024
+loss_type: 'BPR'
+init_method: 'default'
+optimizer: 'default'
+early_stop: True
+
+# prepro : str, way to pre-process raw data input, expect 'origin', f'{N}core', f'{N}filter', N is integer value
+# pos_threshold : float, if not None, treat rating larger than (>=) this threshold as positive sample
+# level : str, which level to do with f'{N}core' or f'{N}filter' operation (it only works when prepro contains 'core' or 'filter') 
+prepro: 10filter
+level: u
+positive_threshold: 1.0
+
+# dataset details
+UID_NAME: user
+IID_NAME: item
+INTER_NAME: label
+TID_NAME: timestamp
+binary_inter: True
+
+
+# test metrics
+metrics: ["recall","mrr","ndcg","hit","precision"]
+
+# consturct DRS
+train_base_ratio: 0.3
+train_rl_ratio: 0.2
+test_stage: 5
+
+# train details of FairAgent
+content_dim: 328
+train_step: 120
+alpha: 2
+beta: 0.5
+gama: 0.1
+
+# bakbone or baseline: pd,  pearson, cnif
+debias_method: 'fair'
+
+# method : bpr no weight
+# pd: [0.01, 0.05, 0.1, 0.15, 0.2]
+# pearson: [0.1, 0.01, 0.001, 0.0001]
+#cnif:[1.0 10.0 100.0]
+weight: 0.01
+add_reg: 'yes'
+burnin: 'no'
+
+# save model
+save: 0
+
+# params for ALDI
+max_epoch: 20
+freq_coef_M: 4
+tws: 1
+use_aldi: 1
